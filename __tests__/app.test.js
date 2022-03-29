@@ -41,7 +41,15 @@ describe('alchemy-app routes', () => {
     expect(res.body).toEqual({ message: 'You are Signed In' });
   });
 
+  it('delete cookie and signs out user', async () => {
+    const user = await UserService.create({
+      email: 'guy1',
+      password: '1235'
+    });
+    const res = await agent.delete('/api/v1/users/sessions');
+    expect(res.body).toEqual({ success: true, message: 'Signed out successfully' });
 
+  })
 
 
 });
