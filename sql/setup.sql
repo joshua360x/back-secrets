@@ -17,3 +17,8 @@ CREATE TABLE secrets (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
+
+INSERT INTO secrets (title, description)
+VALUES ('people walk', 'everyone sees')
+
+
